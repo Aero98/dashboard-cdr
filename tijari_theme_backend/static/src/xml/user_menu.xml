@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="tijari_theme_backend.UserMenuInherit">
+        <t t-jquery="a[data-menu='documentation']" t-operation="replace">
+        </t>
+        <t t-jquery="a[data-menu='support']" t-operation="replace">
+        </t>
+        <t t-jquery="a[data-menu='account']" t-operation="replace">
+        </t>
+    </t>
+</templates>

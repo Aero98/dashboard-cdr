@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cdr_data_record,cdr_data_record,model_cdr_data_record,base.group_user,1,1,1,1
+access_branch_msisdn,branch_msisdn,model_branch_msisdn,base.group_user,1,1,1,1
+access_branch_detail,branch_detail,model_branch_detail,base.group_user,1,1,1,1

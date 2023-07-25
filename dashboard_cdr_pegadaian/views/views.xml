@@ -1,0 +1,119 @@
+<odoo>
+  <data>
+
+    <!-- CDR -->
+
+    <record model="ir.ui.view" id="cdr_data_record_tree">
+      <field name="name">cdr_data_record_tree</field>
+      <field name="model">cdr.data.record</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="timestats"/>
+          <field name="disconnect_time_ts"/>
+          <field name="seq_num"/>
+          <field name="calling_party_origin_address"/>
+          <field name="requested_address"/>
+          <field name="media_capability_requested"/>
+          <field name="connected"/>
+          <field name="releasing_party"/>
+          <field name="release_q850"/>
+          <field name="release_sip"/>
+          <field name="release_reason_internal"/>
+          <field name="orig_party_type"/>
+          <field name="term_party_type"/>
+          <field name="orig_party_business_group_name"/>
+          <field name="term_party_business_group_name"/>
+          <field name="orig_party_user_agent"/>
+          <field name="term_party_user_agent"/>
+          <field name="ic_seize_time"/>
+          <field name="og_seize_time"/>
+          <field name="ringing_time"/>
+          <field name="connect_time"/>
+          <field name="disconnect_time"/>
+          <field name="duration"/>
+          <field name="orig_party_subscriber_addr"/>
+          <field name="term_party_subscriber_addr"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cdr_data_record">
+      <field name="name">CDR Data Record</field>
+      <field name="res_model">cdr.data.record</field>
+      <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <!-- Branch -->
+
+    <record model="ir.ui.view" id="branch_tree">
+      <field name="name">branch_tree</field>
+      <field name="model">branch.msisdn</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="msisdn"/>
+          <field name="branch"/>
+          <field name="branch_colocation"/>
+          <field name="role"/>
+          <field name="kanwil"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_branch_msisdn">
+      <field name="name">Branch</field>
+      <field name="res_model">branch.msisdn</field>
+      <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <!-- Branch Detail -->
+
+    <record model="ir.ui.view" id="branch_detail_tree">
+      <field name="name">branch.detail.tree</field>
+      <field name="model">branch.detail</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="kanwil"/>
+          <field name="kode_kanwil"/>
+          <field name="area"/>
+          <field name="kode_area"/>
+          <field name="cabang_induk"/>
+          <field name="kode_induk"/>
+          <field name="nama_outlet"/>
+          <field name="kode_outlet"/>
+          <field name="status"/>
+          <field name="konven_syariah"/>
+          <field name="nomor_telepon_utama"/>
+          <field name="nomor_telepon_kedua"/>
+          <field name="alamat"/>
+          <field name="rt"/>
+          <field name="rw"/>
+          <field name="kode_pos"/>
+          <field name="kode_kelurahan"/>
+          <field name="kelurahan"/>
+          <field name="kode_kecamatan"/>
+          <field name="kecamatan"/>
+          <field name="kode_kab_kota"/>
+          <field name="kab_kota"/>
+          <field name="provinsi"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_branch_detail">
+      <field name="name">Branch Detail</field>
+      <field name="res_model">branch.detail</field>
+      <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="CDR Data" id="cdr_data_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="CDR Data" id="cdr_data" parent="cdr_data_root" action="action_cdr_data_record" sequence="1"/>
+    <menuitem name="Branch" id="branch_msi_sdn" parent="cdr_data_root" action="action_branch_msisdn" sequence="2"/>
+    <menuitem name="Branch Detail" id="branch_detail" parent="cdr_data_root" action="action_branch_detail" sequence="3"/>
+
+  </data>
+</odoo>
